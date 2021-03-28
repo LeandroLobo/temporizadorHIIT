@@ -1,0 +1,17 @@
+.reloj{
+    padding: 15px;
+}
+.reloj p{
+    width: 100%;
+    font-size: 1.2rem;
+    color:deeppink;
+    margin: 0px;
+    padding: 0px;
+    text-align: right;
+    display: flex;
+    align-content: center;
+    justify-content: flex-end;
+}
+.reloj p > span{
+    margin-right: 8px;
+}

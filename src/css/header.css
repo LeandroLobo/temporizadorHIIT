@@ -1,0 +1,19 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+}
+.header-title h1{
+    color: coral;
+    margin: 10px;
+    text-align: center;
+}
+.header-title span{
+    background-color: deeppink;
+    height: 8px;
+    display: block;
+    margin: 0 5px 15px;
+}
