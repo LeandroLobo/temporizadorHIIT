@@ -1,0 +1,53 @@
+.form-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: black;
+    padding: 20px;
+}
+.form-container label{
+    color: coral;
+    width: 85px;
+    display: inline-block;
+    margin-left: 5px;
+}
+.form-container legend{
+    color: coral;
+    font-weight: bold;
+}
+.form-container input[type="number"]{
+    width: 70px;
+    text-align: right;
+    font-weight: bold;
+    color: deeppink;
+}
+.form-container input[type="text"]{
+    width: 135px;
+    text-align: center;
+    font-weight: bold;
+    color: deeppink;
+}
+.form-buttons{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.form-buttons input[type="button"]{
+    margin: 5px 5px 0;
+    color: deeppink;
+    background-color: transparent;
+    cursor: pointer;
+    border: 1px solid coral;
+    border-radius: 5px;
+}
+.modal-form{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
