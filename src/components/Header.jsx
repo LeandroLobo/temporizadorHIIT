@@ -11,7 +11,7 @@ const Header = () => {
             </div>
             <Reloj/>
         </div>
-    )
+    );
 }
 
 export default Header

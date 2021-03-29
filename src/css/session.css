@@ -1,0 +1,15 @@
+.session{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.session ul{
+    padding-left: 15px;
+    margin: 5px 0;
+}
+.session p{
+    margin: 5px 0;
+}
+.session button{
+    margin: 10px;
+}
