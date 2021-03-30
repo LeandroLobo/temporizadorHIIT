@@ -34,11 +34,30 @@ const App = () => {
     }
   ]
 
+  const testSession = {
+    name: 'Sesión de Prueba',
+    duration: 90,
+    sets: [
+        {
+            name: 'Pecho',
+            work: 10,
+            rest: 5,
+            reps: 2
+        },
+        {
+            name: 'ABS',
+            work: 13,
+            rest: 7,
+            reps: 3
+        }
+    ]
+}
+
   return (
     <Fragment>
       <Header/>
       <Table sessions={userSessions}/>
-      <Timer/>
+      <Timer session={testSession}/>
     </Fragment>
   );
 }
