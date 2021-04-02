@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/temporizadorHIIT/static/css/main.7f291ac1.chunk.css",
-    "main.js": "/temporizadorHIIT/static/js/main.ce1f069c.chunk.js",
-    "main.js.map": "/temporizadorHIIT/static/js/main.ce1f069c.chunk.js.map",
+    "main.js": "/temporizadorHIIT/static/js/main.204dcc95.chunk.js",
+    "main.js.map": "/temporizadorHIIT/static/js/main.204dcc95.chunk.js.map",
     "runtime-main.js": "/temporizadorHIIT/static/js/runtime-main.375d683b.js",
     "runtime-main.js.map": "/temporizadorHIIT/static/js/runtime-main.375d683b.js.map",
     "static/js/2.72e9810d.chunk.js": "/temporizadorHIIT/static/js/2.72e9810d.chunk.js",
@@ -11,12 +11,14 @@
     "static/js/3.a63350fc.chunk.js.map": "/temporizadorHIIT/static/js/3.a63350fc.chunk.js.map",
     "index.html": "/temporizadorHIIT/index.html",
     "static/css/main.7f291ac1.chunk.css.map": "/temporizadorHIIT/static/css/main.7f291ac1.chunk.css.map",
-    "static/js/2.72e9810d.chunk.js.LICENSE.txt": "/temporizadorHIIT/static/js/2.72e9810d.chunk.js.LICENSE.txt"
+    "static/js/2.72e9810d.chunk.js.LICENSE.txt": "/temporizadorHIIT/static/js/2.72e9810d.chunk.js.LICENSE.txt",
+    "static/media/beep.ceb72c39.wav": "/temporizadorHIIT/static/media/beep.ceb72c39.wav",
+    "static/media/bell.cade39a6.wav": "/temporizadorHIIT/static/media/bell.cade39a6.wav"
   },
   "entrypoints": [
     "static/js/runtime-main.375d683b.js",
     "static/js/2.72e9810d.chunk.js",
     "static/css/main.7f291ac1.chunk.css",
-    "static/js/main.ce1f069c.chunk.js"
+    "static/js/main.204dcc95.chunk.js"
   ]
 }
