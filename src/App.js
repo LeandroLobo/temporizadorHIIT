@@ -34,12 +34,12 @@ const App = () => {
     },
     {
       name: 'Sesión de Prueba',
-      duration: 14,
+      duration: 200,
       sets: [
         {
           name: 'set1',
-          work: 5,
-          rest: 3,
+          work: 10,
+          rest: 8,
           reps: 2
         }
       ]

@@ -9,7 +9,8 @@ const Session = ({session, setTimerMount}) => {
                 {session.sets.map(set => (
                     <li key={set.name}>
                         <p>{set.name}</p>
-                        <p>work: <strong>{set.work}s</strong> rest: <strong>{set.rest}s</strong> reps: <strong>{set.reps}</strong></p>
+                        <p>work: <strong>{set.work}s</strong> rest: <strong>{set.rest}s</strong></p>
+                        <p>reps: <strong>{set.reps}</strong></p>
                     </li>
                 ))}
             </ul>

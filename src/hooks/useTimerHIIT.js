@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
 
-const useTimerHIIT = (session) => {
+const useTimerHIIT = (session, beepSound, bellSound) => {
 
     const [time, setTime] = useState(3);
     const [actualSet, setActualSet] = useState('Countdown');
@@ -15,6 +15,8 @@ const useTimerHIIT = (session) => {
 
     useEffect(() => {
 
+        if(actualWork !== 'WORKING...' && time < 4 && time > 0) beepSound.current.play();
+
         const timer = setInterval(() => {
             setTime(time - 1);
         }, 1000);
@@ -26,7 +28,12 @@ const useTimerHIIT = (session) => {
 
         if(time === 0) {
             if(actualWork === 'WORKING...') {
-                if(pointerRep === session.sets[pointer].reps && pointer +1 === session.sets.length) setReset(true);
+                bellSound.current.play();
+                if(pointerRep === session.sets[pointer].reps && pointer +1 === session.sets.length) {
+                    clearInterval(timer);
+                    bellSound.current.play();
+                    setTimeout(() => setReset(true), 2500);
+                }
                 else {
                     setActualWork('REST');
                     setTime(session.sets[pointer].rest);
@@ -53,7 +60,7 @@ const useTimerHIIT = (session) => {
         return () => {
             clearInterval(timer);
         }
-    }, [pause, time, reset, actualWork, pointerRep, session.sets, pointer]);
+    }, [pause, time, reset, actualWork, pointerRep, session.sets, pointer, beepSound, bellSound]);
 
     useEffect(() => {
         if(reset){

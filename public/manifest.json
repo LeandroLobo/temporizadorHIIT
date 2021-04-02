@@ -8,10 +8,10 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo-temporizadorHIIT.png",
+      "src": "favicon.png",
       "type": "image/png",
       "sizes": "512x512"
-    },
+    }
   ],
   "start_url": ".",
   "display": "standalone",
