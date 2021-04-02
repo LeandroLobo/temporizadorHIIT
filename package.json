@@ -1,8 +1,9 @@
 {
   "name": "temporizador-hiit",
+  "author": "Leandro Lobo",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://leandrolobo.github.io/temporizadorHIIT",
+  "homepage": "https://leandrolobo.github.io/temporizadorHIIT/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
