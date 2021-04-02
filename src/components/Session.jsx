@@ -1,7 +1,7 @@
 import React from 'react';
 import '../css/session.css';
 
-const Session = ({session}) => {
+const Session = ({session, setTimerMount}) => {
 
     return (
         <div className="session">
@@ -14,9 +14,9 @@ const Session = ({session}) => {
                 ))}
             </ul>
             <p>Duración: <strong>{Math.floor(session.duration/60)}</strong> min, <strong>{session.duration%60}</strong> seg</p>
-            <button onClick={() => {}}>Comenzar</button>
+            <button onClick={() => {setTimerMount(true)}}>Comenzar</button>
         </div>
-    );
+);
 }
 
 export default Session;

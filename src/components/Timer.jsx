@@ -1,10 +1,11 @@
-import React, {useRef} from 'react';
+import React, {useRef, useEffect} from 'react';
 import timerHIIT from '../hooks/useTimerHIIT';
+import '../css/timer.css';
 
-const Timer = ({session}) => {
+const Timer = ({session, setTimerMount}) => {
 
     const [
-        time, actualSet, actualWork, actualRep, setPause, setReset
+        time, actualSet, actualWork, actualRep, reset, setPause
     ] = timerHIIT(session);
 
     const btnPause = useRef();
@@ -20,14 +21,25 @@ const Timer = ({session}) => {
         }
     }
 
+    useEffect(() => {
+        setTimerMount(!reset);
+    }, [reset])
+
     return (
-        <div>
-            <h3>{session.name}</h3>
-            <h3>{time}</h3>
-            <h4>#{actualSet}</h4>
-            <p>#{actualWork}</p>
-            <h4>Reps {actualRep}</h4>
-            <button ref={btnPause} onClick={handlePause}>PAUSE</button>
+        <div className="modal-timer">
+            <div className="timer-container">
+                <fieldset>
+                <legend>{session.name}</legend>
+                <h3>{time}</h3>
+                <h4>{actualSet}</h4>
+                <p>{actualWork}</p>
+                <h4>{actualRep}</h4>
+                </fieldset>
+                <div className="timer-buttons">
+                    <button ref={btnPause} onClick={handlePause}>PAUSE</button>
+                    <button onClick={() => {setTimerMount(false)}}>CLEAR</button>
+                </div>
+            </div>
         </div>
     );
 }
