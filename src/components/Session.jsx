@@ -17,7 +17,7 @@ const Session = ({session, setTimerMount}) => {
             <p>Duración: <strong>{Math.floor(session.duration/60)}</strong> min, <strong>{session.duration%60}</strong> seg</p>
             <button onClick={() => {setTimerMount(true)}}>Comenzar</button>
         </div>
-);
+    );
 }
 
 export default Session;

@@ -1,4 +1,4 @@
-import React, {Fragment, useEffect} from 'react';
+import React, {Fragment, useState, useEffect} from 'react';
 import Header from './components/Header';
 import Table from './components/Table';
 import metIconos from './helpers/iconos';
@@ -7,7 +7,7 @@ const App = () => {
 
   useEffect(() => metIconos.inicio(),[]);
 
-  const userSessions = [
+  const defaultSessions = [
     {
       name: 'Sesión Standard',
       duration: 480,
@@ -31,25 +31,14 @@ const App = () => {
           reps: 8
         }
       ]
-    },
-    {
-      name: 'Sesión de Prueba',
-      duration: 200,
-      sets: [
-        {
-          name: 'set1',
-          work: 10,
-          rest: 8,
-          reps: 2
-        }
-      ]
     }
   ]
+  const [sessions, setSessions] = useState(defaultSessions);
 
   return (
     <Fragment>
       <Header/>
-      <Table sessions={userSessions}/>
+      <Table sessions={sessions} setSessions={setSessions}/>
     </Fragment>
   );
 }
