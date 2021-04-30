@@ -3,14 +3,12 @@ import Session from './Session';
 import '../css/table.css';
 import Timer from './Timer';
 import NewSession from './NewSession';
-import EditSession from './EditSession';
 
 const Table = ({sessions, setSessions}) => {
 
     const [index, setIndex] = useState(-1);
     const [timerMount, setTimerMount] = useState(false);
     const [openNewSession, setOpenNewSession] = useState(false);
-    const [openEdit, setOpenEdit] = useState(false);
 
     return (
         <div className="table-box">
@@ -23,7 +21,7 @@ const Table = ({sessions, setSessions}) => {
                     >
                         <h3>{session.name}</h3>
                         {(index === i && !timerMount)
-                        && <Session session={session} setTimerMount={setTimerMount} setOpenEdit={setOpenEdit}/>
+                        && <Session session={session} setTimerMount={setTimerMount} sessions={sessions} setSessions={setSessions}/>
                         }
                     </div>))}
             </div>
@@ -32,7 +30,6 @@ const Table = ({sessions, setSessions}) => {
             </nav>
             {(timerMount) && <Timer session={sessions[index]} setTimerMount={setTimerMount}/>}
             {(openNewSession) && <NewSession sessions={sessions} setSessions={setSessions} setOpenNewSession={setOpenNewSession}/>}
-            {(openEdit) && <EditSession sessions={sessions} setSessions={setSessions} setOpenEdit={setOpenEdit}/>}
         </div>
     );
 }

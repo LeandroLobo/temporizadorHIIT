@@ -82,6 +82,7 @@ const NewSet = ({setOpenNewSet, sets, setSets}) => {
 
                 <div className="form-buttons">
                     <input type="submit" name="add" value="Agregar a la sesión"/>
+                    <input type="button" name="back" value="<=" onClick={()=>setOpenNewSet(false)}/>
                 </div>
             </form>
         </div>

@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../css/session.css';
 
-const Session = ({session, setTimerMount, setOpenEdit}) => {
+const Session = ({session, setTimerMount, sessions, setSessions}) => {
+
+    const [confirmDelete, setConfirmDelete] = useState(false);
+
+    const handleDelete = () => {
+        const aux = sessions.filter(sess => (sess !== session));
+        setSessions(aux);
+    }
 
     return (
         <div className="session">
@@ -16,7 +23,8 @@ const Session = ({session, setTimerMount, setOpenEdit}) => {
             </ul>
             <p>Duración: <strong>{Math.floor(session.duration/60)}</strong> min, <strong>{session.duration%60}</strong> seg</p>
             <button onClick={() => {setTimerMount(true)}}>Comenzar</button>
-            <button onClick={()=>setOpenEdit(true)}>Editar Sesión</button>
+            <button onClick={()=>setConfirmDelete(true)}>BORRAR Sesión</button>
+            {(confirmDelete) && <button onClick={handleDelete}><h4>BORRAR</h4></button>}
         </div>
     );
 }
