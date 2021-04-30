@@ -9,7 +9,7 @@ const Table = ({sessions, setSessions}) => {
 
     const [index, setIndex] = useState(-1);
     const [timerMount, setTimerMount] = useState(false);
-    const [openNew, setOpenNew] = useState(false);
+    const [openNewSession, setOpenNewSession] = useState(false);
     const [openEdit, setOpenEdit] = useState(false);
 
     return (
@@ -23,17 +23,16 @@ const Table = ({sessions, setSessions}) => {
                     >
                         <h3>{session.name}</h3>
                         {(index === i && !timerMount)
-                        && <Session session={session} setTimerMount={setTimerMount}/>
+                        && <Session session={session} setTimerMount={setTimerMount} setOpenEdit={setOpenEdit}/>
                         }
                     </div>))}
             </div>
             <nav>
-                <button className="btn-table" onClick={()=>setOpenNew(true)} name="new">Nueva Sesión</button>
-                <button className="btn-table" onClick={()=>setOpenEdit(true)} name="edit">Editar Sesión</button>
+                <button className="btn-table" onClick={()=>setOpenNewSession(true)}>Nueva Sesión</button>
             </nav>
             {(timerMount) && <Timer session={sessions[index]} setTimerMount={setTimerMount}/>}
-            {(openNew) && <NewSession setSessions={setSessions}/>}
-            {(openEdit) && <EditSession setSessions={setSessions}/>}
+            {(openNewSession) && <NewSession sessions={sessions} setSessions={setSessions} setOpenNewSession={setOpenNewSession}/>}
+            {(openEdit) && <EditSession sessions={sessions} setSessions={setSessions} setOpenEdit={setOpenEdit}/>}
         </div>
     );
 }
