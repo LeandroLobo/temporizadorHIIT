@@ -1,5 +1,6 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import '../css/formNewSet.css';
+import metIconos from '../helpers/iconos';
 
 const NewSet = ({setOpenNewSet, sets, setSets}) => {
 
@@ -32,6 +33,7 @@ const NewSet = ({setOpenNewSet, sets, setSets}) => {
         ]);
         setOpenNewSet(false);
     }
+    useEffect(() => metIconos.inicio(),[]);
 
     return (
         <div className="modal-form">
@@ -81,8 +83,8 @@ const NewSet = ({setOpenNewSet, sets, setSets}) => {
                 </fieldset>
 
                 <div className="form-buttons">
-                    <input type="submit" name="add" value="Agregar a la sesión"/>
-                    <input type="button" name="back" value="<=" onClick={()=>setOpenNewSet(false)}/>
+                    <input className="btn-green" type="submit" name="add" value="Agregar a la sesión"/>
+                    <button className="btn-red" onClick={()=>setOpenNewSet(false)}>Cancelar</button>
                 </div>
             </form>
         </div>

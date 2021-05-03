@@ -12,24 +12,25 @@ const Table = ({sessions, setSessions}) => {
 
     return (
         <div className="table-box">
-            <h3>Tablero</h3>
             <div className="table-content">
                 {sessions.map((session, i) => (
-                    <div
-                        key={session.name}
-                        onClick={() => {setIndex(i)}}
-                    >
-                        <h3>{session.name}</h3>
-                        {(index === i && !timerMount)
-                        && <Session session={session} setTimerMount={setTimerMount} sessions={sessions} setSessions={setSessions}/>
-                        }
-                    </div>))}
+                <div key={session.name}>
+                    <h3 className="session-name" onClick={() => (index===i)?setIndex(-1):setIndex(i)}>
+                        {session.name} 
+                    </h3>
+                    {(index === i && !timerMount)
+                    && <Session session={session} setTimerMount={setTimerMount} sessions={sessions} setSessions={setSessions}/>}
+                </div>
+                ))}
             </div>
+            {(openNewSession) && <NewSession sessions={sessions} setSessions={setSessions} setOpenNewSession={setOpenNewSession}/>}
             <nav>
-                <button className="btn-table" onClick={()=>setOpenNewSession(true)}>Nueva Sesión</button>
+                <button className="btn-new" onClick={()=>setOpenNewSession(true)}>
+                    <span className="icono-plus"></span>
+                    Nueva Sesión
+                </button>
             </nav>
             {(timerMount) && <Timer session={sessions[index]} setTimerMount={setTimerMount}/>}
-            {(openNewSession) && <NewSession sessions={sessions} setSessions={setSessions} setOpenNewSession={setOpenNewSession}/>}
         </div>
     );
 }
