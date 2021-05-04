@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import { Donut } from 'react-dial-knob';
 
 const useTimerHIIT = (session, beepSound, bellSound) => {
 
@@ -8,6 +9,8 @@ const useTimerHIIT = (session, beepSound, bellSound) => {
     const [actualRep, setActualRep] = useState('-----');
     const [pause, setPause] = useState(false);
     const [reset, setReset] = useState(false);
+    const [maxTime, setMaxTime] = useState(3);
+    const [color, setColor] = useState('coral');
 
     // variables de control
     const [pointer, setPointer] = useState(0);
@@ -15,7 +18,9 @@ const useTimerHIIT = (session, beepSound, bellSound) => {
 
     useEffect(() => {
 
-        if(actualWork !== 'WORKING...' && time < 4 && time > 0) beepSound.current.play();
+        if(actualWork !== 'WORKING...' && time < 4 && time > 0){
+            beepSound.current.play();
+        }
 
         const timer = setInterval(() => {
             setTime(time - 1);
@@ -37,6 +42,8 @@ const useTimerHIIT = (session, beepSound, bellSound) => {
                 else {
                     setActualWork('REST');
                     setTime(session.sets[pointer].rest);
+                    setMaxTime(session.sets[pointer].rest);
+                    setColor('coral');
                 }
             }
             else {
@@ -44,6 +51,8 @@ const useTimerHIIT = (session, beepSound, bellSound) => {
                 if(pointerRep === session.sets[pointer].reps){
                     setActualSet(session.sets[pointer +1].name);
                     setTime(session.sets[pointer +1].work);
+                    setMaxTime(session.sets[pointer +1].work);
+                    setColor('rgb(80, 255, 185)');
                     setPointerRep(1);
                     setActualRep(`Reps 1 de ${session.sets[pointer +1].reps}`);
                     setPointer(pointer +1);
@@ -51,6 +60,8 @@ const useTimerHIIT = (session, beepSound, bellSound) => {
                 else {
                     setActualSet(session.sets[pointer].name);
                     setTime(session.sets[pointer].work);
+                    setMaxTime(session.sets[pointer].work);
+                    setColor('rgb(80, 255, 185)');
                     setActualRep(`Reps ${pointerRep +1} de ${session.sets[pointer].reps}`);
                     setPointerRep(pointerRep +1);
                 }
@@ -73,9 +84,24 @@ const useTimerHIIT = (session, beepSound, bellSound) => {
     
     const RingMeter = () => {
         return (
-            <div>
-                <h3>{time}</h3>
-            </div>
+            <Donut
+                diameter={200}
+                min={0}
+                max={maxTime}
+                step={1}
+                value={time}
+                theme={{
+                    donutColor: color,
+                    bgrColor: 'rgb(30, 12, 35)',
+                    centerColor: 'rgb(30, 12, 35)',
+                    donutThickness: 35
+                }}
+                style={{
+                    margin: '5px',
+                    color: 'red'
+                }}
+                spaceMaxFromZero={false}
+            />
         );
     }
     

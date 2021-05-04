@@ -33,6 +33,19 @@ const App = () => {
           reps: 8
         }
       ]
+    },
+    {
+      name: 'Test',
+      duration: 26,
+      id: '0002',
+      sets: [
+        {
+          name: 'anything',
+          work: 8,
+          rest: 5,
+          reps: 2
+        }
+      ]
     }
   ]
   const [sessions, setSessions] = useState(defaultSessions);

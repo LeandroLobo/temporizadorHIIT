@@ -3,16 +3,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: rgb(0, 0, 0);
     padding: 20px;
-    color: coral;
-}
-.timer-container h3{
-    color: deeppink;
-    text-align: center;
-    font-size: 60px;
-    font-weight: bold;
-    margin: 15px;
+    color: rgb(173, 136, 255);
+    /* purpura custom: rgb(148, 101, 248) */
+    /* purpura suave: rgb(173, 136, 255) */
+    /* verdecito custom: rgb(80, 255, 185) */
 }
 .timer-container h4{
     text-align: left;
@@ -38,7 +33,6 @@
     margin-top: 10px;
 }
 .timer-buttons button{
-    color: deeppink;
     background-color: transparent;
     cursor: pointer;
     border: none;

@@ -29,6 +29,13 @@ const Timer = ({session, setTimerMount}) => {
         setTimerMount(!reset);
     }, [reset, setTimerMount]);
     useEffect(() => metIconos.inicio(),[pause]);
+    useEffect(() => {
+        if(actualWork === 'WORKING...'){
+            workRef.current.style.color = 'rgb(80, 255, 185)';
+        }else{
+            workRef.current.style.color = 'coral';
+        }
+    }, [actualWork])
 
     return (
         <div className="modal-timer">
