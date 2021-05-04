@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Session from './Session';
 import '../css/table.css';
 import Timer from './Timer';
@@ -9,6 +9,7 @@ const Table = ({sessions, setSessions}) => {
     const [index, setIndex] = useState(-1);
     const [timerMount, setTimerMount] = useState(false);
     const [openNewSession, setOpenNewSession] = useState(false);
+    const [editStage, setEditStage] = useState('Nueva Sesión');
 
     return (
         <div className="table-box">
@@ -22,14 +23,20 @@ const Table = ({sessions, setSessions}) => {
                     && <Session session={session} setTimerMount={setTimerMount} sessions={sessions} setSessions={setSessions}/>}
                 </div>
                 ))}
+                <div>
+                    <button className="btn-new" onClick={()=>setOpenNewSession(true)}>
+                        <span className="icono-plus"></span>
+                        {editStage}
+                    </button>
+                    {(openNewSession) && <NewSession
+                        sessions={sessions}
+                        setSessions={setSessions}
+                        setOpenNewSession={setOpenNewSession}
+                        setEditStage={setEditStage}
+                    />}
+                </div>
+                
             </div>
-            {(openNewSession) && <NewSession sessions={sessions} setSessions={setSessions} setOpenNewSession={setOpenNewSession}/>}
-            <nav>
-                <button className="btn-new" onClick={()=>setOpenNewSession(true)}>
-                    <span className="icono-plus"></span>
-                    Nueva Sesión
-                </button>
-            </nav>
             {(timerMount) && <Timer session={sessions[index]} setTimerMount={setTimerMount}/>}
         </div>
     );

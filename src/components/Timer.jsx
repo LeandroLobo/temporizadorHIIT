@@ -9,11 +9,10 @@ const Timer = ({session, setTimerMount}) => {
 
     const beepSoundRef = useRef();
     const bellSoundRef = useRef();
-    const containerRef = useRef();
     const workRef = useRef();
 
     const [
-        RingMeter, actualSet, actualWork, actualRep, reset, pause, setPause
+        DonutMeter, actualSet, actualWork, actualRep, reset, pause, setPause
     ] = timerHIIT(session, beepSoundRef, bellSoundRef);
 
     const handlePause = () => {
@@ -39,10 +38,10 @@ const Timer = ({session, setTimerMount}) => {
 
     return (
         <div className="modal-timer">
-            <div ref={containerRef} className="timer-container">
+            <div className="timer-container">
                 <fieldset>
                 <legend>{session.name}</legend>
-                <RingMeter/>
+                <div className="donut-meter"><DonutMeter/></div>
                 <h4>{actualSet}</h4>
                 <p ref={workRef}>{actualWork}</p>
                 <h4>{actualRep}</h4>

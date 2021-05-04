@@ -11,9 +11,8 @@
     margin-top: -20px;
 }
 .new-session{
-    width: 220px;
+    width: 250px;
     padding: 15px;
-    background-color: black;
 }
 .session ul{
     padding-left: 15px;
@@ -25,28 +24,11 @@
 .session button{
     margin: 10px;
 }
-.session legend{
-    color: coral;
-    font-weight: bold;
-}
 .set-name{
     color:rgb(255, 173, 20);
     font-style: italic;
     word-break: break-word;
     width: 170px;
-}
-.modal-form{
-    position: fixed;
-    height: 100vh;
-    z-index: 1;
-    left: 0;
-    top: 0px;
-    width: 100vw;
-    background-color: rgb(30, 12, 35);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 30px;
 }
 .form-buttons{
     display: flex;

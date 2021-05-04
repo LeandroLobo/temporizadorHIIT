@@ -36,58 +36,51 @@ const NewSet = ({setOpenNewSet, sets, setSets}) => {
     useEffect(() => metIconos.inicio(),[]);
 
     return (
-        <div className="modal-form">
-            <form className="form-container" onSubmit={addSet}>
-                <fieldset>
-                    <legend>Nuevo Set</legend>
+        <form className="form-container" onSubmit={addSet}>
+            <div>
+                <label htmlFor="set-name">Nombre:</label>
+                <input 
+                    type="text" id="set-name" name="name" maxLength={15}
+                    onChange={e => setName(e.target.value)}
+                    placeholder="ejemplo: 'push-ups'"
+                />
+            </div>
+            {nameError && <p className="form-error">Campo Obligatorio</p>}
 
-                    <div>
-                        <label htmlFor="set-name">Nombre:</label>
-                        <input 
-                            type="text" id="set-name" name="name"
-                            onChange={e => setName(e.target.value)}
-                            placeholder="ejemplo: 'push-ups'"
-                        />
-                    </div>
-                    {nameError && <p className="form-error">Campo Obligatorio</p>}
+            <div>
+                <label htmlFor="set-work">Work:</label>
+                <input 
+                    type="number" id="set-work" name="work" min="1" step="1"
+                    onChange={e => setWork(e.target.value)}
+                />
+                <label>segundos</label>
+            </div>
+            {workError && <p className="form-error">Campo Obligatorio</p>}
 
-                    <div>
-                        <label htmlFor="set-work">Work:</label>
-                        <input 
-                            type="number" id="set-work" name="work" min="1" step="1"
-                            onChange={e => setWork(e.target.value)}
-                        />
-                        <label>segundos</label>
-                    </div>
-                    {workError && <p className="form-error">Campo Obligatorio</p>}
+            <div>
+                <label htmlFor="set-rest">Rest:</label>
+                <input
+                    type="number" id="set-rest" name="rest" min="0" step="1"
+                    onChange={e => setRest(e.target.value)}
+                />
+                <label>segundos</label>
+            </div>
+            {restError && <p className="form-error">Campo Obligatorio</p>}
 
-                    <div>
-                        <label htmlFor="set-rest">Rest:</label>
-                        <input
-                            type="number" id="set-rest" name="rest" min="0" step="1"
-                            onChange={e => setRest(e.target.value)}
-                        />
-                        <label>segundos</label>
-                    </div>
-                    {restError && <p className="form-error">Campo Obligatorio</p>}
-
-                    <div>
-                        <label htmlFor="set-reps">Repetir:</label>
-                        <input 
-                            type="number" id="set-reps" name="reps" min="1" step="1"
-                            onChange={e => setReps(e.target.value)}
-                        />
-                        <label>veces</label>
-                    </div>
-                    {repsError && <p className="form-error">Campo Obligatorio</p>}
-                </fieldset>
-
-                <div className="form-buttons">
-                    <input className="btn-green" type="submit" name="add" value="Agregar a la sesión"/>
-                    <button className="btn-red" onClick={()=>setOpenNewSet(false)}>Cancelar</button>
-                </div>
-            </form>
-        </div>
+            <div>
+                <label htmlFor="set-reps">Repetir:</label>
+                <input 
+                    type="number" id="set-reps" name="reps" min="1" step="1"
+                    onChange={e => setReps(e.target.value)}
+                />
+                <label>veces</label>
+            </div>
+            {repsError && <p className="form-error">Campo Obligatorio</p>}
+            <div className="form-buttons">
+                <input className="btn-green" type="submit" name="add" value="Agregar a la sesión"/>
+                <button className="btn-red" onClick={()=>setOpenNewSet(false)}>Cancelar</button>
+            </div>
+        </form>
     );
 }
 

@@ -82,7 +82,7 @@ const useTimerHIIT = (session, beepSound, bellSound) => {
         }
     }, [reset])
     
-    const RingMeter = () => {
+    const DonutMeter = () => {
         return (
             <Donut
                 diameter={200}
@@ -106,7 +106,7 @@ const useTimerHIIT = (session, beepSound, bellSound) => {
     }
     
 
-    return [RingMeter, actualSet, actualWork, actualRep, reset, pause, setPause];
+    return [DonutMeter, actualSet, actualWork, actualRep, reset, pause, setPause];
 
 }
 

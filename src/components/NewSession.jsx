@@ -3,7 +3,7 @@ import NewSet from './NewSet';
 import '../css/session.css';
 import metIconos from '../helpers/iconos';
 
-const NewSession = ({sessions, setSessions, setOpenNewSession}) => {
+const NewSession = ({sessions, setSessions, setOpenNewSession, setEditStage}) => {
     
     const [name, setName] = useState('Nueva Sesión');
     const [sets, setSets] = useState([]);
@@ -12,6 +12,7 @@ const NewSession = ({sessions, setSessions, setOpenNewSession}) => {
 
     const handleNewSession = () => {
         const newSession = {
+            id: Date.now(),
             name,
             duration,
             sets
@@ -23,15 +24,18 @@ const NewSession = ({sessions, setSessions, setOpenNewSession}) => {
         setDuration(sets.reduce((d, set)=> d + (set.work + set.rest)*set.reps, 0));
     }, [sets]);
     useEffect(() => metIconos.inicio(),[]);
+    useEffect(() => {
+        openNewSet?setEditStage('Nuevo Set'):setEditStage('Nueva Sesión');
+    }, [openNewSet, setEditStage]);
 
     return (
-        <div className="modal-form">
-            <div className="session new-session">
-            <fieldset>
-                <legend>{name}</legend>
+        <div className="session new-session">
+            {(openNewSet)
+            ?<NewSet setOpenNewSet={setOpenNewSet} sets={sets} setSets={setSets}/>
+            :<div>
                 <ul>
                     <div>
-                        <input type="text" name="name" placeholder="Cambiar Nombre" onChange={e => setName(e.target.value)}/>
+                        <input type="text" name="name" maxLength={18} placeholder="Cambiar Nombre" onChange={e => setName(e.target.value)}/>
                     </div>
                     {(sets.length === 0)?
                         <li>
@@ -52,9 +56,8 @@ const NewSession = ({sessions, setSessions, setOpenNewSession}) => {
                     {sets.length > 0 && <button className="btn-green" onClick={handleNewSession}>Guardar Session</button>}
                     <button className="btn-red" onClick={() => {setOpenNewSession(false)}}>Cancelar</button>
                 </div>
-            </fieldset>
             </div>
-            {(openNewSet) && <NewSet setOpenNewSet={setOpenNewSet} sets={sets} setSets={setSets}/>}
+            }
         </div>
     );
 }

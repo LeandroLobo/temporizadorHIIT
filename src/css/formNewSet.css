@@ -2,18 +2,16 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    background-color: black;
-    padding: 20px;
+    background-color: indigo;
     border-radius: 15px;
+}
+.form-container>div{
+    margin:5px 0px;
 }
 .form-container label{
     color: rgb(80, 255, 185);
     width: 65px;
     display: inline-block;
-}
-.form-container legend{
-    color: rgb(80, 255, 185);
-    font-weight: bold;
 }
 .form-container input[type="number"]{
     width: 60px;
@@ -44,18 +42,6 @@
     align-items: center;
     font-weight: bold;
     background-color: transparent;
-}
-.modal-form{
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 95px;
-    width: 100vw;
-    background-color: rgb(30, 12, 35);
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    padding-top: 30px;
 }
 .form-error{
     font-size: 12px;
