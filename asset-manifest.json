@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/temporizadorHIIT/static/css/main.0dad0416.chunk.css",
-    "main.js": "/temporizadorHIIT/static/js/main.e9fe779f.chunk.js",
-    "main.js.map": "/temporizadorHIIT/static/js/main.e9fe779f.chunk.js.map",
-    "runtime-main.js": "/temporizadorHIIT/static/js/runtime-main.bce85e35.js",
-    "runtime-main.js.map": "/temporizadorHIIT/static/js/runtime-main.bce85e35.js.map",
-    "static/js/2.e8cedf13.chunk.js": "/temporizadorHIIT/static/js/2.e8cedf13.chunk.js",
-    "static/js/2.e8cedf13.chunk.js.map": "/temporizadorHIIT/static/js/2.e8cedf13.chunk.js.map",
-    "static/js/3.e4b161de.chunk.js": "/temporizadorHIIT/static/js/3.e4b161de.chunk.js",
-    "static/js/3.e4b161de.chunk.js.map": "/temporizadorHIIT/static/js/3.e4b161de.chunk.js.map",
+    "main.css": "/temporizadorHIIT/static/css/main.f2ed80c7.chunk.css",
+    "main.js": "/temporizadorHIIT/static/js/main.19a386e5.chunk.js",
+    "main.js.map": "/temporizadorHIIT/static/js/main.19a386e5.chunk.js.map",
+    "runtime-main.js": "/temporizadorHIIT/static/js/runtime-main.7fa438b2.js",
+    "runtime-main.js.map": "/temporizadorHIIT/static/js/runtime-main.7fa438b2.js.map",
+    "static/js/2.e7a36d31.chunk.js": "/temporizadorHIIT/static/js/2.e7a36d31.chunk.js",
+    "static/js/2.e7a36d31.chunk.js.map": "/temporizadorHIIT/static/js/2.e7a36d31.chunk.js.map",
+    "static/js/3.f9aeb7ca.chunk.js": "/temporizadorHIIT/static/js/3.f9aeb7ca.chunk.js",
+    "static/js/3.f9aeb7ca.chunk.js.map": "/temporizadorHIIT/static/js/3.f9aeb7ca.chunk.js.map",
     "index.html": "/temporizadorHIIT/index.html",
-    "static/css/main.0dad0416.chunk.css.map": "/temporizadorHIIT/static/css/main.0dad0416.chunk.css.map",
-    "static/js/2.e8cedf13.chunk.js.LICENSE.txt": "/temporizadorHIIT/static/js/2.e8cedf13.chunk.js.LICENSE.txt",
+    "static/css/main.f2ed80c7.chunk.css.map": "/temporizadorHIIT/static/css/main.f2ed80c7.chunk.css.map",
+    "static/js/2.e7a36d31.chunk.js.LICENSE.txt": "/temporizadorHIIT/static/js/2.e7a36d31.chunk.js.LICENSE.txt",
     "static/media/beep.ceb72c39.wav": "/temporizadorHIIT/static/media/beep.ceb72c39.wav",
     "static/media/bell.cade39a6.wav": "/temporizadorHIIT/static/media/bell.cade39a6.wav"
   },
   "entrypoints": [
-    "static/js/runtime-main.bce85e35.js",
-    "static/js/2.e8cedf13.chunk.js",
-    "static/css/main.0dad0416.chunk.css",
-    "static/js/main.e9fe779f.chunk.js"
+    "static/js/runtime-main.7fa438b2.js",
+    "static/js/2.e7a36d31.chunk.js",
+    "static/css/main.f2ed80c7.chunk.css",
+    "static/js/main.19a386e5.chunk.js"
   ]
 }
