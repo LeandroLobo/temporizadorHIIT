@@ -14,7 +14,7 @@ const Table = ({sessions, setSessions}) => {
         <div className="table-box">
             <div className="table-content">
                 {sessions.map((session, i) => (
-                <div key={session.name}>
+                <div key={session.id}>
                     <h3 className="session-name" onClick={() => (index===i)?setIndex(-1):setIndex(i)}>
                         {session.name} 
                     </h3>

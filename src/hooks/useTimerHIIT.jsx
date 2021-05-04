@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 
 const useTimerHIIT = (session, beepSound, bellSound) => {
 
@@ -71,8 +71,16 @@ const useTimerHIIT = (session, beepSound, bellSound) => {
         }
     }, [reset])
     
+    const RingMeter = () => {
+        return (
+            <div>
+                <h3>{time}</h3>
+            </div>
+        );
+    }
+    
 
-    return [time, actualSet, actualWork, actualRep, reset, setPause];
+    return [RingMeter, actualSet, actualWork, actualRep, reset, pause, setPause];
 
 }
 

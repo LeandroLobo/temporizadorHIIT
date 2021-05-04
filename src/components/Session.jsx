@@ -26,10 +26,13 @@ const Session = ({session, setTimerMount, sessions, setSessions}) => {
             </ul>
             <p>Duración: <strong>{Math.floor(session.duration/60)}</strong> min, <strong>{session.duration%60}</strong> seg</p>
             <div className="form-buttons">
-                <button className="btn-green" onClick={() => {setTimerMount(true)}}>Comenzar</button>
+                <button className="btn-green" onClick={() => {setTimerMount(true)}}>
+                    <span className="icono-play"></span>
+                    <p>Comenzar</p>
+                </button>
                 <button className="btn-red" onClick={()=>setConfirmDelete(true)}>
                     <span className="icono-trash"></span>
-                    <p> Borrar sesión</p>
+                    <p>Borrar sesión</p>
                 </button>
                 {(confirmDelete) && <button onClick={handleDelete}><h4>BORRAR</h4></button>}
             </div>

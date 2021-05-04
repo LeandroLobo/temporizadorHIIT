@@ -11,6 +11,7 @@ const App = () => {
     {
       name: 'Sesión Standard',
       duration: 480,
+      id: '0000',
       sets: [
         {
           name: '45/15',
@@ -23,6 +24,7 @@ const App = () => {
     {
       name: 'Sesión Standard Heavy',
       duration: 960,
+      id: '0001',
       sets: [
         {
           name: '90/30',
