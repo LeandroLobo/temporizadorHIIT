@@ -21,9 +21,6 @@
 .session p{
     margin: 5px;
 }
-.session button{
-    margin: 10px;
-}
 .set-name{
     color:rgb(255, 173, 20);
     font-style: italic;
@@ -31,13 +28,15 @@
     width: 135px;
 }
 .form-buttons{
+    box-sizing: border-box;
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
     width: 100%;
+    padding: 0 5px;
 }
 .form-buttons button{
-    margin: 10px 10px 0;
+    margin: 10px 5px 0;
     cursor: pointer;
     border-radius: 5px;
     height: 30px;
@@ -47,7 +46,7 @@
     font-weight: bold;
     background-color: transparent;
 }
-.btn-red>span, .btn-green>span{
+.btn-red>span, .btn-green>span, .btn-pink>span{
     margin-right: 5px;
 }
 .btn-red{ 
@@ -55,4 +54,17 @@
 }
 .btn-green{
     color: rgb(80, 255, 185);
+}
+.btn-pink{
+    color: deeppink;
+}
+.confirm-btns{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.confirm-btns button{
+    width: 75px;
 }

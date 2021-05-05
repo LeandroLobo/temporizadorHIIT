@@ -5,7 +5,7 @@ import metIconos from '../helpers/iconos';
 
 const NewSession = ({sessions, setSessions, setOpenNewSession, setEditStage}) => {
     
-    const [name, setName] = useState('Nueva Sesión');
+    const [name, setName] = useState('');
     const [sets, setSets] = useState([]);
     const [openNewSet, setOpenNewSet] = useState(null);
     const [duration, setDuration] = useState(0);
@@ -13,7 +13,7 @@ const NewSession = ({sessions, setSessions, setOpenNewSession, setEditStage}) =>
     const handleNewSession = () => {
         const newSession = {
             id: Date.now(),
-            name,
+            name: name || 'Nueva Sesión',
             duration,
             sets
         };
@@ -35,7 +35,14 @@ const NewSession = ({sessions, setSessions, setOpenNewSession, setEditStage}) =>
             :<div>
                 <ul>
                     <div>
-                        <input type="text" name="name" maxLength={18} placeholder="Cambiar Nombre" onChange={e => setName(e.target.value)}/>
+                        <input
+                            type="text"
+                            name="name"
+                            maxLength={18}
+                            placeholder="Cambiar Nombre"
+                            value={name}
+                            onChange={e => setName(e.target.value)}
+                        />
                     </div>
                     {(sets.length === 0)?
                         <li>

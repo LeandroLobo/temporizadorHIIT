@@ -92,8 +92,8 @@ const useTimerHIIT = (session, beepSound, bellSound) => {
                 value={time}
                 theme={{
                     donutColor: color,
-                    bgrColor: 'rgb(30, 12, 35)',
-                    centerColor: 'rgb(30, 12, 35)',
+                    bgrColor: 'rgb(24, 9, 29)',
+                    centerColor: 'rgb(24, 9, 29)',
                     donutThickness: 35
                 }}
                 style={{

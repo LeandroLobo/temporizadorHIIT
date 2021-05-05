@@ -11,7 +11,7 @@ const Session = ({session, setTimerMount, sessions, setSessions}) => {
         setSessions(aux);
     }
 
-    useEffect(() => metIconos.inicio(),[]);
+    useEffect(() => metIconos.inicio(),[confirmDelete]);
 
     return (
         <div className="session">
@@ -34,7 +34,15 @@ const Session = ({session, setTimerMount, sessions, setSessions}) => {
                     <span className="icono-trash"></span>
                     <p>Borrar sesión</p>
                 </button>
-                {(confirmDelete) && <button onClick={handleDelete}><h4>BORRAR</h4></button>}
+                {(confirmDelete)
+                &&<div className="confirm-btns">
+                    <button className="btn-pink" onClick={()=>setConfirmDelete(false)}>
+                        <h4>Cancelar</h4>
+                    </button>
+                    <button className="btn-red" onClick={handleDelete}>
+                        <h4>Confirmar</h4>
+                    </button>
+                </div>}
             </div>
         </div>
     );
