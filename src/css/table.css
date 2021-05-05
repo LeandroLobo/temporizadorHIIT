@@ -1,9 +1,6 @@
 .table-box{
     position: relative;
 }
-.table-box > nav{
-    margin: 10px;
-}
 .table-content{
     display: flex;
     flex-flow: row wrap;
@@ -13,7 +10,8 @@
 }
 .session-name{
     color: coral;
-    width: 200px;
+    padding: 0px 5px;
+    width: 170px;
     height: 100px;
     display: flex;
     justify-content: center;
